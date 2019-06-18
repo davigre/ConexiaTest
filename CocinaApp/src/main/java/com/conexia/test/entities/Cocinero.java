@@ -7,16 +7,13 @@ public class Cocinero {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "IdCocinero")
+	@Column(name = "idcocinero")
 	private Long id;
-
-	@Column(name = "Nombre")
+	
 	private String nombre;
 
-	@Column(name = "Apellido1")
 	private String apellido1;
 
-	@Column(name = "Apellido2")
 	private String apellido2;
 
 	public Long getId() {
