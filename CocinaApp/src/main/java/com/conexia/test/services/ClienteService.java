@@ -14,6 +14,6 @@ public interface ClienteService {
 
 	Cliente getClienteById(Long id);
 
-	List<Cliente> getAllCliente();
+	List<Cliente> getAllClientes();
 
 }

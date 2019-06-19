@@ -23,6 +23,7 @@
 <td>${camarero.nombre}</td>
 <td>${camarero.apellido1}</td>
 <td>${camarero.apellido2}</td>
+<td><a href="updateCamarero?id=${camarero.id}">editar</a></td>
 </tr>
 </c:forEach>
 </table>

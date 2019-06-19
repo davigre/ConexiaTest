@@ -1,6 +1,6 @@
 package com.conexia.test.entities;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -10,19 +10,15 @@ public class Factura {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "IdFactura")
+	@Column(name = "idfactura")
 	private Long id;
-
-	@Column(name = "IdCliente")
+	
 	private Long idCliente;
-
-	@Column(name = "IdCamarero")
+	
 	private Long idCamarero;
-
-	@Column(name = "IdMesa")
+	
 	private Long idMesa;
 
-	@Column(name = "FechaFactura")
 	private Date fechaFactura;
 
 	public Long getId() {

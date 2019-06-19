@@ -7,13 +7,12 @@ public class Mesa {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "IdMesa")
+	@Column(name = "idmesa")
 	private Long id;
-
-	@Column(name = "NumMaxComensales")
+	
+	@Column(name = "nummaxcomensales")
 	private Long numMaxComensales;
-
-	@Column(name = "Ubicacion")
+	
 	private String ubicacion;
 
 	public Long getId() {

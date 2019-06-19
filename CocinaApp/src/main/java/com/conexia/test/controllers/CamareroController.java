@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.conexia.test.entities.Camarero;
 import com.conexia.test.services.CamareroService;
@@ -36,5 +37,21 @@ public class CamareroController {
 		modelMap.addAttribute("camareros", lstCamareros);		
 		return "displayCamareros";
 	}
+	
+	@RequestMapping("/updateCamarero")
+	public String updateCamarero(@RequestParam("id") Long id, ModelMap modelMap) {		
+		Camarero camarero = service.getCamareroById(id);				
+		modelMap.addAttribute("camarero", camarero);
+		return "updateCamarero";		
+	}
+	
+	@RequestMapping("/updateCamareroRequest")
+	public String updateCamareroRequest(@ModelAttribute("camarero") Camarero camarero, ModelMap modelMap) {		
+		service.saveCamarero(camarero);
+		String msg = "Camarero actualizado";
+		modelMap.addAttribute("msg", msg);		
+		return "updateCamarero";
+	}
 
+	
 }

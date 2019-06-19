@@ -43,7 +43,7 @@ public class ClienteServiceImpl implements ClienteService {
 	}
 
 	@Override
-	public List<Cliente> getAllCliente() {
+	public List<Cliente> getAllClientes() {
 		return repository.findAll();
 	}	
 

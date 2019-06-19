@@ -3,48 +3,31 @@ package com.conexia.test.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "detallefactura")
 public class Detallefactura {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
-	@Column(name = "IdDetalleFactura")
-	private Integer idDetalleFactura;
-
-	@Column(name = "Plato")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "iddetalleFactura")
+	private Integer id;
+	
 	private String plato;
 
-	@Column(name = "Importe")
 	private int importe;
 
 	@JoinColumn(name = "IdFactura", referencedColumnName = "IdFactura")
 	@ManyToOne
-	private Factura idFactura;
+	private Factura factura;
 
 	@JoinColumn(name = "IdCocinero", referencedColumnName = "IdCocinero")
-	@ManyToOne
-	private Cocinero idCocinero;
+	@OneToOne
+	private Cocinero cocinero;
 
-	public Detallefactura() {
+	public Integer getId() {
+		return id;
 	}
 
-	public Detallefactura(Integer idDetalleFactura) {
-		this.idDetalleFactura = idDetalleFactura;
-	}
-
-	public Detallefactura(Integer idDetalleFactura, String plato, int importe) {
-		this.idDetalleFactura = idDetalleFactura;
-		this.plato = plato;
-		this.importe = importe;
-	}
-
-	public Integer getIdDetalleFactura() {
-		return idDetalleFactura;
-	}
-
-	public void setIdDetalleFactura(Integer idDetalleFactura) {
-		this.idDetalleFactura = idDetalleFactura;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getPlato() {
@@ -63,26 +46,27 @@ public class Detallefactura {
 		this.importe = importe;
 	}
 
-	public Factura getIdFactura() {
-		return idFactura;
+	public Factura getFactura() {
+		return factura;
 	}
 
-	public void setIdFactura(Factura idFactura) {
-		this.idFactura = idFactura;
+	public void setFactura(Factura factura) {
+		this.factura = factura;
 	}
 
-	public Cocinero getIdCocinero() {
-		return idCocinero;
+	public Cocinero getCocinero() {
+		return cocinero;
 	}
 
-	public void setIdCocinero(Cocinero idCocinero) {
-		this.idCocinero = idCocinero;
+	public void setCocinero(Cocinero cocinero) {
+		this.cocinero = cocinero;
 	}
 
 	@Override
 	public String toString() {
-		return "Detallefactura [idDetalleFactura=" + idDetalleFactura + ", plato=" + plato + ", importe=" + importe
-				+ ", idFactura=" + idFactura + ", idCocinero=" + idCocinero + "]";
+		return "Detallefactura [id=" + id + ", plato=" + plato + ", importe=" + importe + ", factura=" + factura
+				+ ", cocinero=" + cocinero + "]";
 	}
+	
 
 }

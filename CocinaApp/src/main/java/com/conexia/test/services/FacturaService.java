@@ -14,6 +14,6 @@ public interface FacturaService {
 
 	Factura getFacturaById(Long id);
 
-	List<Factura> getAllFactura();
+	List<Factura> getAllFacturas();
 
 }

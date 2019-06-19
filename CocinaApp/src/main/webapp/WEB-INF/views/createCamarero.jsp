@@ -9,14 +9,14 @@
 <body>
 <form action="saveCamarero" method="post">
 <pre>
-Id: <input type="text" name="id">
+<input type="hidden" name="id"/>
 Nombre: <input type="text" name="nombre"/>
 Apellido1: <input type="text" name="apellido1"/>
 Apellido2: <input type="text" name="apellido2"/>
-<input type="submit" value="save"/>
+<input type="submit" value="Guardar"/>
 </pre>
 </form>
 ${msg}
-<a href="displayCamareros">Ver Todos</a>
+<br/><a href="displayCamareros">Ver Todos</a>
 </body>
 </html>
