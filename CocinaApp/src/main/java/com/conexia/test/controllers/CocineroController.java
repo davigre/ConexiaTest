@@ -17,15 +17,15 @@ public class CocineroController {
 	@Autowired
 	CocineroService service;
 
-	@RequestMapping("/showCreate")
-	public String showCreate() {
+	@RequestMapping("/createCocinero")
+	public String createCocinero() {
 		return "createCocinero";
 	}
 
 	@RequestMapping("/saveCocinero")
 	public String saveCocinero(@ModelAttribute("cocinero") Cocinero cocinero, ModelMap modelMap) {
 		Cocinero savedCocinero = service.saveCocinero(cocinero);
-		String msg = "Cocinero saved with id:" + savedCocinero.getId();
+		String msg = "Cocinero guardado with id:" + savedCocinero.getId();
 		modelMap.addAttribute("msg", msg);
 		return "createCocinero";
 	}
@@ -33,8 +33,7 @@ public class CocineroController {
 	@RequestMapping("/displayCocineros")
 	public String displayCocineros(ModelMap modelMap) {
 		List<Cocinero> lstCocineros = service.getAllCocineros();
-		modelMap.addAttribute("cocineros", lstCocineros);
-		
+		modelMap.addAttribute("cocineros", lstCocineros);		
 		return "displayCocineros";
 	}
 }
