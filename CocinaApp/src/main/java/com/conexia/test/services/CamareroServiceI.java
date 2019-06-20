@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.conexia.test.entities.Camarero;
 
-public interface CamareroService {
+public interface CamareroServiceI {
 	
 	Camarero saveCamarero(Camarero camarero);
 	

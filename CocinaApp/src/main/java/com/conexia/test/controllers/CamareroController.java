@@ -5,18 +5,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.conexia.test.entities.Camarero;
-import com.conexia.test.services.CamareroService;
+import com.conexia.test.services.CamareroServiceI;
 
 @Controller
 public class CamareroController {
 
 	@Autowired
-	CamareroService service;
+	CamareroServiceI service;
 
 	@RequestMapping("/createCamarero")
 	public String createCamarero() {
@@ -24,7 +23,7 @@ public class CamareroController {
 	}
 
 	@RequestMapping("/saveCamarero")
-	public String saveCamarero(@ModelAttribute("camarero") Camarero camarero, ModelMap modelMap) {		
+	public String saveCamarero(Camarero camarero, ModelMap modelMap) {		
 		Camarero savedCamarero = service.saveCamarero(camarero);
 		String msg = "Camarero guardado with id:" + savedCamarero.getId();
 		modelMap.addAttribute("msg", msg);
@@ -46,7 +45,7 @@ public class CamareroController {
 	}
 	
 	@RequestMapping("/updateCamareroRequest")
-	public String updateCamareroRequest(@ModelAttribute("camarero") Camarero camarero, ModelMap modelMap) {		
+	public String updateCamareroRequest(Camarero camarero, ModelMap modelMap) {		
 		service.saveCamarero(camarero);
 		String msg = "Camarero actualizado";
 		modelMap.addAttribute("msg", msg);		

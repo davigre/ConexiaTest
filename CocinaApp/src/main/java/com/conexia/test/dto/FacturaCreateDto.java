@@ -1,6 +1,6 @@
 package com.conexia.test.dto;
 
-public class FacturaCreate {
+public class FacturaCreateDto {
 	private Long clienteId;
 	private Long camareroId;
 	private Long mesaId;

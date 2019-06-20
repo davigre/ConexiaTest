@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.conexia.test.entities.Cliente;
 
-public interface ClienteService {
+public interface ClienteServiceI {
 
 	Cliente saveCliente(Cliente cliente);
 

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Complete Factura</title>
+<title>Factura</title>
 </head>
 <body>
 

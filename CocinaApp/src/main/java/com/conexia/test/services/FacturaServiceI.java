@@ -2,12 +2,12 @@ package com.conexia.test.services;
 
 import java.util.List;
 
-import com.conexia.test.dto.FacturaCreate;
+import com.conexia.test.dto.FacturaCreateDto;
 import com.conexia.test.entities.Factura;
 
-public interface FacturaService {
+public interface FacturaServiceI {
 
-	Factura saveFactura(FacturaCreate facturaCreate);
+	Factura saveFactura(FacturaCreateDto facturaCreate);
 
 	Factura updateFactura(Factura factura);
 

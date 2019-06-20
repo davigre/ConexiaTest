@@ -9,7 +9,7 @@ import com.conexia.test.entities.Cliente;
 import com.conexia.test.repositories.ClienteRepository;
 
 @Service
-public class ClienteServiceImpl implements ClienteService {
+public class ClienteServiceImpl implements ClienteServiceI {
 	
 	@Autowired
 	ClienteRepository repository;	

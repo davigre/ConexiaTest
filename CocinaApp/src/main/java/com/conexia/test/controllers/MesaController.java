@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.conexia.test.entities.Mesa;
-import com.conexia.test.services.MesaService;
+import com.conexia.test.services.MesaServiceI;
 
 @Controller
 public class MesaController {
 	
 	@Autowired
-	MesaService service;
+	MesaServiceI service;
 	
 	@RequestMapping("/createMesa")
 	public String createMesa() {		

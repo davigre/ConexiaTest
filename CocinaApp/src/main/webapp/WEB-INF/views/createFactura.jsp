@@ -9,8 +9,10 @@
 <title>Generar Factura</title>
 </head>
 <body>
-<form action="saveFactura" method="post">
+<script src='<c:url value="/jqueryui/jquery.js"/>'></script>
 <h3>Create Factura</h3>
+<form action="saveFactura" method="post">
+<input type="hidden" name="detalleFacturaSerilized" />
 Cliente:
 <select name="clienteId">
 <c:forEach items="${clientes}" var="cliente">
@@ -29,6 +31,21 @@ Cliente:
     <option value="${mesa.id}">${mesa.id}</option>
 </c:forEach>
 </select>
+<div>
+<select name="cocineroId">
+<c:forEach items="${cocineros}" var="cocinero">
+    <option value="${cocinero.id}">${cocinero.nombre} ${cocinero.apellido1} ${cocinero.apellido2}</option>
+</c:forEach>
+</select>
+<input type="text" name="nombrePlato" /> 
+<input type="text" name="importe" />
+<button>Agregar Plato</button>
+</div>
+<table>
+<tr><th>Cocinero</th><th>Plato</th><th>Importe</th></tr>
+<tr><td>1</td><td>Pasta</td><td>2300</td></tr>
+<tr><td>1</td><td>Pasta</td><td>2300</td></tr>
+</table>
 <br/><input type="submit" value="Guardar" />
 </form>
 ${msg}

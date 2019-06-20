@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.conexia.test.entities.Cocinero;
 
-public interface CocineroService {
+public interface CocineroServiceI {
 
 	Cocinero saveCocinero(Cocinero cocinero);
 	

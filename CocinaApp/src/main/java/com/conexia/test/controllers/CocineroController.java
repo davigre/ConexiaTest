@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.conexia.test.entities.Cocinero;
-import com.conexia.test.services.CocineroService;
+import com.conexia.test.services.CocineroServiceI;
 
 @Controller
 public class CocineroController {
 
 	@Autowired
-	CocineroService service;
+	CocineroServiceI service;
 
 	@RequestMapping("/createCocinero")
 	public String createCocinero() {

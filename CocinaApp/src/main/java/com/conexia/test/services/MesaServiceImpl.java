@@ -9,7 +9,7 @@ import com.conexia.test.entities.Mesa;
 import com.conexia.test.repositories.MesaRespository;
 
 @Service
-public class MesaServiceImpl implements MesaService {
+public class MesaServiceImpl implements MesaServiceI {
 
 	@Autowired
 	MesaRespository repository;

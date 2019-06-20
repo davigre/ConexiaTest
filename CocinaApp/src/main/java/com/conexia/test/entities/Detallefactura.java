@@ -14,7 +14,7 @@ public class Detallefactura {
 
 	private int importe;
 
-	@JoinColumn(name = "IdFactura", referencedColumnName = "IdFactura")
+	@JoinColumn(name = "factura", referencedColumnName = "IdFactura")
 	@ManyToOne
 	private Factura factura;
 

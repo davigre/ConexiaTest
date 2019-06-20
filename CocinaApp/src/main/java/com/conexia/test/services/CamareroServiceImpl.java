@@ -9,7 +9,7 @@ import com.conexia.test.entities.Camarero;
 import com.conexia.test.repositories.CamareroRepository;
 
 @Service
-public class CamareroServiceImpl implements CamareroService {
+public class CamareroServiceImpl implements CamareroServiceI {
 	
 	@Autowired
 	CamareroRepository repository;

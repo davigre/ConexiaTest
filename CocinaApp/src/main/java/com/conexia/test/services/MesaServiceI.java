@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.conexia.test.entities.Mesa;
 
-public interface MesaService {
+public interface MesaServiceI {
 
 	Mesa saveMesa(Mesa mesa);
 

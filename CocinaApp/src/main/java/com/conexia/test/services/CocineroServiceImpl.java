@@ -9,7 +9,7 @@ import com.conexia.test.entities.Cocinero;
 import com.conexia.test.repositories.CocineroRepository;
 
 @Service
-public class CocineroServiceImpl implements CocineroService {
+public class CocineroServiceImpl implements CocineroServiceI {
 	
 	@Autowired
 	private CocineroRepository repository;
