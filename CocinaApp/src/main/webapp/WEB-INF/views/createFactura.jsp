@@ -10,27 +10,26 @@
 </head>
 <body>
 <form action="saveFactura" method="post">
-<input type="hidden" name="id"/>
 <h3>Create Factura</h3>
 Cliente:
-<select name="cliente">
+<select name="clienteId">
 <c:forEach items="${clientes}" var="cliente">
     <option value="${cliente.id}">${cliente.nombre} ${cliente.apellido1} ${cliente.apellido2}</option>
 </c:forEach>
 </select>
-Camarero:
-<select name="camarero">
+<br/>Camarero:
+<select name="camareroId">
 <c:forEach items="${camareros}" var="camarero">
     <option value="${camarero.id}">${camarero.nombre} ${camarero.apellido1} ${camarero.apellido2}</option>
 </c:forEach>
 </select>
-Mesa:
-<select name="mesa">
+<br/>Mesa:
+<select name="mesaId">
 <c:forEach items="${mesas}" var="mesa">
     <option value="${mesa.id}">${mesa.id}</option>
 </c:forEach>
 </select>
-<input type="submit" value="Guardar" />
+<br/><input type="submit" value="Guardar" />
 </form>
 ${msg}
 <br/><a href="displayFacturas">Ver Todos</a>

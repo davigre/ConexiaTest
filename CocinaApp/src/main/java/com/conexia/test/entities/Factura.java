@@ -13,12 +13,16 @@ public class Factura {
 	@Column(name = "idfactura")
 	private Long id;
 	
+	@Column(name = "idcliente")
 	private Long idCliente;
 	
+	@Column(name = "idcamarero")
 	private Long idCamarero;
 	
+	@Column(name = "idmesa")
 	private Long idMesa;
 
+	@Column(name = "fechafactura")
 	private Date fechaFactura;
 
 	public Long getId() {

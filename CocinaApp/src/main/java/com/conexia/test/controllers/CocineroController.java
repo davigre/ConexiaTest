@@ -25,7 +25,7 @@ public class CocineroController {
 	@RequestMapping("/saveCocinero")
 	public String saveCocinero(@ModelAttribute("cocinero") Cocinero cocinero, ModelMap modelMap) {
 		Cocinero savedCocinero = service.saveCocinero(cocinero);
-		String msg = "Cocinero guardado with id:" + savedCocinero.getId();
+		String msg = "Cocinero guardado with id:" + savedCocinero.getId();		
 		modelMap.addAttribute("msg", msg);
 		return "createCocinero";
 	}

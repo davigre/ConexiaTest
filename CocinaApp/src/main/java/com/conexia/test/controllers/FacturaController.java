@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.conexia.test.dto.FacturaCreate;
 import com.conexia.test.entities.Camarero;
 import com.conexia.test.entities.Cliente;
 import com.conexia.test.entities.Factura;
@@ -47,12 +49,16 @@ public class FacturaController {
 		return "createFactura";
 	}
 	
-	@RequestMapping("/saveFactura")
-	public String saveFacturaRequest(@ModelAttribute("factura") Factura factura, ModelMap modelMap) {
-		Factura savedFactura = facturaService.saveFactura(factura);
-		String msg = "Se genera la Factura No:" + savedFactura.getId();
+	@RequestMapping(value = "/saveFactura", method = RequestMethod.POST)
+	public String saveFacturaRequest(FacturaCreate facturaCreate, ModelMap modelMap) {
+		
+		Factura savedFactura = facturaService.saveFactura(facturaCreate);
+		
+		String msg = "Se genera la Factura No:" + savedFactura.getId() + "<a href=\"/createDetalle\">Agregar Detalle</a>";
 		modelMap.addAttribute("msg", msg);
+		
 		return "createFactura";
+		
 	}
 	
 }

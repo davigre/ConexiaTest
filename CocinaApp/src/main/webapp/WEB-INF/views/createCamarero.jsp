@@ -7,9 +7,9 @@
 <title>Create Camarero</title>
 </head>
 <body>
+<h3>Create Camarero</h3>
 <form action="saveCamarero" method="post">
 <pre>
-<input type="hidden" name="id"/>
 Nombre: <input type="text" name="nombre"/>
 Apellido1: <input type="text" name="apellido1"/>
 Apellido2: <input type="text" name="apellido2"/>
