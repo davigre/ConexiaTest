@@ -4,6 +4,8 @@ public class FacturaCreateDto {
 	private Long clienteId;
 	private Long camareroId;
 	private Long mesaId;
+	private String serializedDetails;
+	
 	public Long getClienteId() {
 		return clienteId;
 	}
@@ -22,8 +24,15 @@ public class FacturaCreateDto {
 	public void setMesaId(Long mesaId) {
 		this.mesaId = mesaId;
 	}
+	public String getSerializedDetails() {
+		return serializedDetails;
+	}
+	public void setSerializedDetails(String serializedDetails) {
+		this.serializedDetails = serializedDetails;
+	}
 	@Override
 	public String toString() {
-		return "FacturaCreate [clienteId=" + clienteId + ", camareroId=" + camareroId + ", mesaId=" + mesaId + "]";
+		return "FacturaCreateDto [clienteId=" + clienteId + ", camareroId=" + camareroId + ", mesaId=" + mesaId
+				+ ", serializedDetails=" + serializedDetails + "]";
 	}	
 }

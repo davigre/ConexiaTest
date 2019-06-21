@@ -59,8 +59,7 @@ public class FacturaController {
 	@RequestMapping(value = "/saveFactura", method = RequestMethod.POST)
 	public String saveFacturaRequest(FacturaCreateDto facturaCreate, ModelMap modelMap) {
 		
-		Factura savedFactura = facturaService.saveFactura(facturaCreate);
-		
+		Factura savedFactura = facturaService.saveFactura(facturaCreate);		
 		String msg = "Se genera la Factura No:" + savedFactura.getId();
 		modelMap.addAttribute("msg", msg);
 		
