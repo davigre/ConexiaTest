@@ -7,6 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Listar Mesas</title>
+<link rel="stylesheet" href="cocina.css">
 </head>
 <body>
 <h3>Mesas:</h3>
@@ -15,6 +16,7 @@
 <th>id</th>
 <th>Numero Maximo de Comensales</th>
 <th>Ubicacion</th>
+<th></th>
 </tr>
 <c:forEach items="${mesas}" var="mesa">
 <tr>
@@ -26,5 +28,6 @@
 </c:forEach>
 </table>
 <a href="createMesa">Adicionar</a>
+<a href="index.html">Menu Principal</a>
 </body>
 </html>

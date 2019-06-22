@@ -6,30 +6,32 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Listar Camareros</title>
+<title>Listar Clientes</title>
 <link rel="stylesheet" href="cocina.css">
 </head>
 <body>
-<h3>Camareros:</h3>
+<h3>Clientes:</h3>
 <table>
 <tr>
 <th>id</th>
 <th>nombre</th>
 <th>apellido1</th>
 <th>apellido2</th>
+<th>Observaciones</th>
 <th></th>
 </tr>
-<c:forEach items="${camareros}" var="camarero">
+<c:forEach items="${clientes}" var="cliente">
 <tr>
-<td>${camarero.id}</td>
-<td>${camarero.nombre}</td>
-<td>${camarero.apellido1}</td>
-<td>${camarero.apellido2}</td>
-<td><a href="updateCamarero?id=${camarero.id}">editar</a></td>
+<td>${cliente.id}</td>
+<td>${cliente.nombre}</td>
+<td>${cliente.apellido1}</td>
+<td>${cliente.apellido2}</td>
+<td>${cliente.observaciones}</td>
+<td><a href="updateCliente?id=${cliente.id}">editar</a></td>
 </tr>
 </c:forEach>
 </table>
-<a href="createCamarero">Adicionar</a>
+<a href="createCliente">Adicionar</a>
 <a href="index.html">Menu Principal</a>
 </body>
 </html>

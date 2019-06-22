@@ -32,8 +32,8 @@ public class CamareroController {
 	
 	@RequestMapping("/displayCamareros")
 	public String displayCamarero(ModelMap modelMap) {
-		List<Camarero> lstCamareros = service.getAllCamareros();
-		modelMap.addAttribute("camareros", lstCamareros);		
+		List<Camarero> camareros = service.getAllCamareros();
+		modelMap.addAttribute("camareros", camareros);		
 		return "displayCamareros";
 	}
 	
@@ -51,6 +51,5 @@ public class CamareroController {
 		modelMap.addAttribute("msg", msg);		
 		return "updateCamarero";
 	}
-
 	
 }

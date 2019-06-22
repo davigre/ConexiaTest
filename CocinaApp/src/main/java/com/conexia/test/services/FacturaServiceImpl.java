@@ -1,6 +1,7 @@
 package com.conexia.test.services;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -11,11 +12,13 @@ import org.springframework.stereotype.Service;
 import com.conexia.test.dto.FacturaCreateDto;
 import com.conexia.test.entities.Camarero;
 import com.conexia.test.entities.Cliente;
+import com.conexia.test.entities.Cocinero;
 import com.conexia.test.entities.Detallefactura;
 import com.conexia.test.entities.Factura;
 import com.conexia.test.entities.Mesa;
 import com.conexia.test.repositories.CamareroRepository;
 import com.conexia.test.repositories.ClienteRepository;
+import com.conexia.test.repositories.CocineroRepository;
 import com.conexia.test.repositories.DetallefacturaRepository;
 import com.conexia.test.repositories.FacturaRepository;
 import com.conexia.test.repositories.MesaRespository;
@@ -41,6 +44,9 @@ public class FacturaServiceImpl implements FacturaServiceI {
 	
 	@Autowired
 	DetallefacturaRepository detallefacturaRepository;
+	
+	@Autowired
+	CocineroRepository cocineroRepository;
 	
 	public FacturaRepository getFacturaRepository() {
 		return facturaRepository;
@@ -74,16 +80,22 @@ public class FacturaServiceImpl implements FacturaServiceI {
 		try {
 			
 			List<Detail> details = Arrays.asList(mapper.readValue(facturaCreate.getSerializedDetails(), Detail[].class));
+			
+			factura.setFacturaDetails(new ArrayList<Detallefactura>());
+			
 			for (Detail detail : details) {
 				
+				Cocinero cocinero = cocineroRepository.findOne(detail.cocineroId);
+				
 				Detallefactura detallefactura = new Detallefactura();
+				detallefactura.setCocinero(cocinero);
 				detallefactura.setFactura(factura);
 				detallefactura.setPlato(detail.getPlato());
 				detallefactura.setImporte(Integer.parseInt(detail.getImporte()));
 				
 				detallefactura = detallefacturaRepository.save(detallefactura);
 				
-				factura.getDetallefacturaCollection().add(detallefactura);
+				factura.getFacturaDetails().add(detallefactura);
 				
 			}			
 				
@@ -122,13 +134,13 @@ public class FacturaServiceImpl implements FacturaServiceI {
 		return facturaRepository.findAll();
 	}
 	
-	private class Detail {
+	static class Detail {
 		
 		private Long cocineroId;
 		private String cocineroName;
 		private String plato;
-		private String importe;
-				
+		private String importe;		
+		
 		public Long getCocineroId() {
 			return cocineroId;
 		}

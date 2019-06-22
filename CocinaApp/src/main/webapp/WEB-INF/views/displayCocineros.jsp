@@ -7,6 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Listar Cocineros</title>
+<link rel="stylesheet" href="cocina.css">
 </head>
 <body>
 <h3>Cocineros:</h3>
@@ -16,6 +17,7 @@
 <th>nombre</th>
 <th>apellido1</th>
 <th>apellido2</th>
+<th></th>
 </tr>
 <c:forEach items="${cocineros}" var="cocinero">
 <tr>
@@ -28,5 +30,6 @@
 </c:forEach>
 </table>
 <a href="createCocinero">Adicionar</a>
+<a href="index.html">Menu Principal</a>
 </body>
 </html>

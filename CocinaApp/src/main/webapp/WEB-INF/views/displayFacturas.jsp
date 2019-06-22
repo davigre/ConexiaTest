@@ -6,30 +6,32 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Listar Camareros</title>
+<title>Facturas</title>
 <link rel="stylesheet" href="cocina.css">
 </head>
 <body>
-<h3>Camareros:</h3>
+<h3>Facturas:</h3>
 <table>
 <tr>
 <th>id</th>
-<th>nombre</th>
-<th>apellido1</th>
-<th>apellido2</th>
+<th>Fecha</th>
+<th>Cliente</th>
+<th>Camarero</th>
+<th>Mesa</th>
 <th></th>
 </tr>
-<c:forEach items="${camareros}" var="camarero">
-<tr>
-<td>${camarero.id}</td>
-<td>${camarero.nombre}</td>
-<td>${camarero.apellido1}</td>
-<td>${camarero.apellido2}</td>
-<td><a href="updateCamarero?id=${camarero.id}">editar</a></td>
-</tr>
+<c:forEach items="${facturas}" var="factura">
+	<tr>
+	<td>${factura.id}</td>
+	<td>${factura.fechaFactura}</td>
+	<td>${factura.cliente.nombre}</td>
+	<td>${factura.camarero.nombre}</td>
+	<td>${factura.mesa.id}</td>
+	<td><a href="viewFactura?id=${factura.id}">ver</a></td>
+	</tr>
 </c:forEach>
 </table>
-<a href="createCamarero">Adicionar</a>
+<a href="createFactura">Adicionar</a>
 <a href="index.html">Menu Principal</a>
 </body>
 </html>

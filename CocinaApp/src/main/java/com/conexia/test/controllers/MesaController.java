@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.conexia.test.entities.Mesa;
 import com.conexia.test.services.MesaServiceI;
@@ -36,6 +37,21 @@ public class MesaController {
 		List<Mesa> mesas = service.getAllMesas();
 		modelMap.addAttribute("mesas", mesas);
 		return "displayMesas";
+	}
+	
+	@RequestMapping("/updateMesa")
+	public String updateMesa(@RequestParam("id") Long id, ModelMap modelMap) {		
+		Mesa mesa = service.getMesaById(id);				
+		modelMap.addAttribute("mesa", mesa);
+		return "updateMesa";		
+	}
+	
+	@RequestMapping("/updateMesaRequest")
+	public String updateMesaRequest(Mesa mesa, ModelMap modelMap) {		
+		service.saveMesa(mesa);
+		String msg = "Mesa actualizado";
+		modelMap.addAttribute("msg", msg);		
+		return "updateMesa";
 	}
 
 }

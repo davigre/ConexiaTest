@@ -1,11 +1,9 @@
 package com.conexia.test.entities;
 
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "FACTURA")
@@ -32,8 +30,9 @@ public class Factura {
     @JoinColumn(name = "idmesa")
 	private Mesa mesa;
 
-	@OneToMany(mappedBy = "factura")
-    private Collection<Detallefactura> detallefacturaCollection;
+	@OneToMany(mappedBy = "factura", fetch = FetchType.EAGER)
+	//@OrderBy("iddetallefactura")
+    private List<Detallefactura> facturaDetails;
 	
 	public Long getId() {
 		return id;
@@ -73,20 +72,20 @@ public class Factura {
 
 	public void setMesa(Mesa mesa) {
 		this.mesa = mesa;
+	}	
+
+	public List<Detallefactura> getFacturaDetails() {
+		return facturaDetails;
 	}
 
-	public Collection<Detallefactura> getDetallefacturaCollection() {
-		return detallefacturaCollection;
-	}
-
-	public void setDetallefacturaCollection(Collection<Detallefactura> detallefacturaCollection) {
-		this.detallefacturaCollection = detallefacturaCollection;
+	public void setFacturaDetails(List<Detallefactura> facturaDetails) {
+		this.facturaDetails = facturaDetails;
 	}
 
 	@Override
 	public String toString() {
 		return "Factura [id=" + id + ", fechaFactura=" + fechaFactura + ", cliente=" + cliente + ", camarero="
-				+ camarero + ", mesa=" + mesa + ", detallefacturaCollection=" + detallefacturaCollection + "]";
+				+ camarero + ", mesa=" + mesa + ", detallefacturaCollection=" + facturaDetails + "]";
 	}	
 
 }

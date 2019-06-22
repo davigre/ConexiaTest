@@ -7,18 +7,18 @@ public class Detallefactura {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "iddetalleFactura")
+	@Column(name = "iddetallefactura")
 	private Integer id;
 	
 	private String plato;
 
 	private int importe;
 
-	@JoinColumn(name = "factura", referencedColumnName = "IdFactura")
+	@JoinColumn(name = "idfactura", referencedColumnName = "idfactura")
 	@ManyToOne
 	private Factura factura;
 
-	@JoinColumn(name = "IdCocinero", referencedColumnName = "IdCocinero")
+	@JoinColumn(name = "idcocinero", referencedColumnName = "idcocinero")
 	@OneToOne
 	private Cocinero cocinero;
 

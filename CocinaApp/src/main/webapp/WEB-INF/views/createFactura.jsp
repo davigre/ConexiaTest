@@ -50,7 +50,6 @@ Cliente:
 </table>
 <br/><input type="submit" value="Guardar" id="submit" />
 </form>
-${msg}
 <br/><a href="displayFacturas">Ver Todos</a>
 <script type="text/javascript">
 	
