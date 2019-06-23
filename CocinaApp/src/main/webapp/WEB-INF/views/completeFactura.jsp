@@ -31,5 +31,6 @@
 </c:forEach>
 </table>
 <br/><a href="displayFacturas">Ver Todos</a>
+<a href="index.html">Menu Principal</a>
 </body>
 </html>

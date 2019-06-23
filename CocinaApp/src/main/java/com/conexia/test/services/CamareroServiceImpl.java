@@ -10,7 +10,7 @@ import com.conexia.test.repositories.CamareroRepository;
 
 @Service
 public class CamareroServiceImpl implements CamareroServiceI {
-	
+
 	@Autowired
 	CamareroRepository repository;
 
@@ -23,7 +23,7 @@ public class CamareroServiceImpl implements CamareroServiceI {
 	}
 
 	@Override
-	public Camarero saveCamarero(Camarero camarero) { 
+	public Camarero saveCamarero(Camarero camarero) {
 		return repository.save(camarero);
 	}
 
@@ -38,7 +38,7 @@ public class CamareroServiceImpl implements CamareroServiceI {
 	}
 
 	@Override
-	public Camarero getCamareroById(Long id) {		
+	public Camarero getCamareroById(Long id) {
 		return repository.findOne(id);
 	}
 
