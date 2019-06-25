@@ -1,2 +1,7 @@
 # ConexiaTest
-Knowledge Test to be hired by Conexia
+Knowledge Test from Conexia
+
+# Database
+- Database\DDL.sql
+
+
