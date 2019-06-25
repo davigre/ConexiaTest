@@ -30,8 +30,7 @@ public class Factura {
     @JoinColumn(name = "idmesa")
 	private Mesa mesa;
 
-	@OneToMany(mappedBy = "factura", fetch = FetchType.EAGER)
-	//@OrderBy("iddetallefactura")
+	@OneToMany(mappedBy = "factura", fetch = FetchType.LAZY)
     private List<Detallefactura> facturaDetails;
 	
 	public Long getId() {
