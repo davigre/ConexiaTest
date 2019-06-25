@@ -4,7 +4,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Create Mesa</title>
+<link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
+<link rel="stylesheet" href="cocina.css">
+<script src="jqueryui/jquery.js"></script>
+<script src="jqueryui/jquery-ui.min.js"></script>
 </head>
 <body>
 <h3>Crear Mesa</h3>
@@ -14,6 +19,6 @@
 <br/><input type="submit" value="Guardar"/>
 </form>
 ${msg}
-<br/><a href="displayMesas">Ver Todos</a>
+<br/><a class="ui-button ui-widget ui-corner-all" href="displayMesas">Ver Todos</a>
 </body>
 </html>

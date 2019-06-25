@@ -40,13 +40,13 @@ public class CocineroTests {
 
 	}
 
-	@Test
-	public void testDeleteCocinero() {
-		Cocinero cocinero = repository.findOne(1L);
-
-		repository.save(cocinero);
-
-	}
+//	@Test
+//	public void testDeleteCocinero() {
+//		Cocinero cocinero = repository.findOne(1L);
+//
+//		repository.save(cocinero);
+//
+//	}
 
 	@Test
 	public void testGetAllCocineros() {

@@ -42,13 +42,13 @@ public class ClientesTests {
 		
 	}
 
-	@Test
-	public void testDeleteCliente() {
-		
-		Cliente cliente = repository.findOne(1L);
-		repository.delete(cliente);
-		
-	}
+//	@Test
+//	public void testDeleteCliente() {
+//		
+//		Cliente cliente = repository.findOne(1L);
+//		repository.delete(cliente);
+//		
+//	}
 	
 	@Test
 	public void testGetAllClientes() {

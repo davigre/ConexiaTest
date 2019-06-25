@@ -48,12 +48,12 @@ public class CamarerosTests {
 		
 	}
 	
-	@Test 
-	public void testDeleteCamarero() {
-		
-		Camarero camarero = repository.findOne(2L);		
-		repository.delete(camarero);
-		
-	}
+//	@Test 
+//	public void testDeleteCamarero() {
+//		
+//		Camarero camarero = repository.findOne(2L);		
+//		repository.delete(camarero);
+//		
+//	}
 
 }

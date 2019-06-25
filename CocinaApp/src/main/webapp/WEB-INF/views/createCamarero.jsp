@@ -4,7 +4,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Create Camarero</title>
+<link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
+<link rel="stylesheet" href="cocina.css">
+<script src="jqueryui/jquery.js"></script>
+<script src="jqueryui/jquery-ui.min.js"></script>
 </head>
 <body>
 <h3>Create Camarero</h3>
@@ -17,6 +22,6 @@ Apellido2: <input type="text" name="apellido2"/>
 </pre>
 </form>
 ${msg}
-<br/><a href="displayCamareros">Ver Todos</a>
+<br/><a class="ui-button ui-widget ui-corner-all" href="displayCamareros">Ver Todos</a>
 </body>
 </html>

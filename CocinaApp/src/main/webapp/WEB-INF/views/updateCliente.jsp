@@ -4,9 +4,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Update Cliente</title>
+<link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
+<link rel="stylesheet" href="cocina.css">
+<script src="jqueryui/jquery.js"></script>
+<script src="jqueryui/jquery-ui.min.js"></script>
 </head>
 <body>
+<h3>Edicion de Cliente</h3>
 <form action="updateClienteRequest" method="post">
 <pre>
 Id: <input type="text" name="id" value="${cliente.id}" readonly />
@@ -18,6 +24,6 @@ Observaciones: <input type="text" name="observaciones" value="${cliente.observac
 </pre>
 </form>
 ${msg}
-<br><a href="displayClientes">Ver Todos</a>
+<br><a class="ui-button ui-widget ui-corner-all" href="displayClientes">Ver Todos</a>
 </body>
 </html>

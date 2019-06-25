@@ -2,19 +2,35 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
+<link rel="stylesheet" href="cocina.css">
 <title>La Mejor Cocina Web Application</title>
-<link rel="stylesheet" href="jqueryui\jquery-ui.min.css">
-<script src="jqueryui\jquery.js"></script>
-<script src="jqueryui\jquery-ui.min.js"></script>
+<script src="jqueryui/jquery.js"></script>
+<script src="jqueryui/jquery-ui.min.js"></script>
+<script>
+	$(function() {
+		$("#menu").menu({
+			items : "> :not(.ui-widget-header)"
+		});
+	});
+</script>
+<style>
+  .ui-menu { width: 200px; }
+</style>
 </head>
 <body>
-<h2>Cocina Web Application</h2>
-<a href="displayCamareros">Camareros</a><br/>
-<a href="displayCocineros">Cocineros</a><br/>
-<a href="displayMesas">Mesas</a><br/>
-<a href="displayClientes">Clientes</a><br/>
-<a href="displayFacturas">Facturas</a><br/>
-<a href="camarerosSalesReport">Reporte Ventas Camareros</a><br/>
-<a href="clientesConsumoReport?purchaselimit=100000">Reporte Clientes Consumos mayores a $100,000</a>
+	<h2>La Mejor Cocina Web Application</h2>
+	<ul id="menu">
+		<li class="ui-widget-header"><div>Admin</div></li>
+		<li><div><a href="displayCamareros">Camareros</a></div></li>
+		<li><div><a href="displayCocineros">Cocineros</a></div></li>
+		<li><div><a href="displayMesas">Mesas</a></div></li>
+		<li><div><a href="displayClientes">Clientes</a></div></li>
+		<li><div><a href="displayFacturas">Facturas</a></div></li>
+		<li class="ui-widget-header"><div>Reportes</div></li>
+		<li><div><a href="camarerosSalesReport">Reporte Ventas Camareros</a></div></li>
+		<li><div><a href="clientesConsumoReport?purchaselimit=100000">Reporte Clientes Consumos mayores a $100,000</a></div></li>
+	</ul>
 </body>
 </html>
