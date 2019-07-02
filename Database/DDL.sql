@@ -1,74 +1,74 @@
-DROP DATABASE IF EXISTS COCINA;
+drop database if exists `cocina`;
 
-CREATE DATABASE COCINA;
-USE COCINA;
+create database cocina;
+use cocina;
 
-CREATE TABLE COCINERO (
+create table cocinero (
 
-   IdCocinero   INT AUTO_INCREMENT,
-   Nombre      VARCHAR(100) NOT NULL,
-   Apellido1   VARCHAR(100) NOT NULL,
-   Apellido2   VARCHAR(100),
-   PRIMARY KEY (IdCocinero)
-
-);
-
-CREATE TABLE CAMARERO (
-
-   IdCamarero  INT AUTO_INCREMENT,
-   Nombre      VARCHAR(100) NOT NULL,
-   Apellido1   VARCHAR(100) NOT NULL,
-   Apellido2   VARCHAR(100),
-   PRIMARY KEY (IdCamarero)
+   idcocinero   int auto_increment,
+   nombre      varchar(100) not null,
+   apellido1   varchar(100) not null,
+   apellido2   varchar(100),
+   primary key (idcocinero)
 
 );
 
-CREATE TABLE MESA (
+create table camarero (
 
-   IdMesa            INT AUTO_INCREMENT,
-   NumMaxComensales  INT NOT NULL DEFAULT 1,
-   Ubicacion         VARCHAR(100),   
-   PRIMARY KEY (IdMesa)
+   idcamarero  int auto_increment,
+   nombre      varchar(100) not null,
+   apellido1   varchar(100) not null,
+   apellido2   varchar(100),
+   primary key (idcamarero)
 
 );
 
-CREATE TABLE CLIENTE (
+create table mesa (
 
-   IdCliente     INT AUTO_INCREMENT,
-   Nombre        VARCHAR(100) NOT NULL,
-   Apellido1     VARCHAR(100) NOT NULL,
-   Apellido2     VARCHAR(100),
-   Observaciones VARCHAR(1000),
-   PRIMARY KEY (IdCliente)
+   idmesa            int auto_increment,
+   nummaxcomensales  int not null default 1,
+   ubicacion         varchar(100),   
+   primary key (idmesa)
+
+);
+
+create table cliente (
+
+   idcliente     int auto_increment,
+   nombre        varchar(100) not null,
+   apellido1     varchar(100) not null,
+   apellido2     varchar(100),
+   observaciones varchar(1000),
+   primary key (idcliente)
 	
 );
 
-CREATE TABLE FACTURA (
+create table factura (
 
-   IdFactura     INT AUTO_INCREMENT,
-	IdCliente     INT NOT NULL,
-	IdCamarero    INT NOT NULL,	
-   IdMesa        INT NOT NULL,
-	FechaFactura  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (IdFactura)
+   idfactura     int auto_increment,
+	idcliente     int not null,
+	idcamarero    int not null,	
+   idmesa        int not null,
+	fechafactura  timestamp default current_timestamp,
+	primary key (idfactura)
 	
 );
 
-ALTER TABLE FACTURA ADD CONSTRAINT FK_FACT_CLIENTE FOREIGN KEY (IdCliente) REFERENCES CLIENTE(IdCliente);
-ALTER TABLE FACTURA ADD CONSTRAINT FK_FACT_CAMARERO FOREIGN KEY (IdCamarero) REFERENCES CAMARERO(IdCamarero);
-ALTER TABLE FACTURA ADD CONSTRAINT FK_FACT_MESA FOREIGN KEY (IdMesa) REFERENCES MESA(IdMesa);
+alter table factura add constraint fk_fact_cliente foreign key (idcliente) references cliente(idcliente);
+alter table factura add constraint fk_fact_camarero foreign key (idcamarero) references camarero(idcamarero);
+alter table factura add constraint fk_fact_mesa foreign key (idmesa) references mesa(idmesa);
 
-CREATE TABLE DETALLEFACTURA (
+create table detallefactura (
 
-   IdFactura         INT,
-	IdDetalleFactura  INT AUTO_INCREMENT,
-	IdCocinero        INT,
-	Plato             VARCHAR(100) NOT NULL DEFAULT '',
-	Importe           INT NOT NULL DEFAULT 0,
+   idfactura         int,
+	iddetallefactura  int auto_increment,
+	idcocinero        int,
+	plato             varchar(100) not null default '',
+	importe           int not null default 0,
    -- 
-	PRIMARY KEY (IdDetalleFactura)
+	primary key (iddetallefactura)
 	
 );
 
-ALTER TABLE DETALLEFACTURA ADD CONSTRAINT FK_DET_FACT_COCINERO FOREIGN KEY (IdCocinero) REFERENCES COCINERO(IdCocinero);
-ALTER TABLE DETALLEFACTURA ADD CONSTRAINT FK_DET_FACT_FACTURA FOREIGN KEY (IdFactura) REFERENCES FACTURA(IdFactura);
+alter table detallefactura add constraint fk_det_fact_cocinero foreign key (idcocinero) references cocinero(idcocinero);
+alter table detallefactura add constraint fk_det_fact_factura foreign key (idfactura) references factura(idfactura);

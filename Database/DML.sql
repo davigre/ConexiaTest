@@ -1,47 +1,47 @@
--- COCINEROS
-INSERT INTO COCINERO ( nombre, apellido1, apellido2 ) VALUES ( 'DAVID', 'MENDEZ', 'NAVARRETE' );
-INSERT INTO COCINERO ( nombre, apellido1, apellido2 ) VALUES ( 'PEDRO', 'PEREZ', 'JARAMILLO' );
+-- cocineros
+insert into cocinero ( nombre, apellido1, apellido2 ) values ( 'david', 'mendez', 'navarrete' );
+insert into cocinero ( nombre, apellido1, apellido2 ) values ( 'pedro', 'perez', 'jaramillo' );
 
--- CAMAREROS
-INSERT INTO CAMARERO ( nombre, apellido1, apellido2 ) VALUES ( 'LUIS', 'ALTAMAR', 'SASTOQUE' );
-INSERT INTO CAMARERO ( nombre, apellido1, apellido2 ) VALUES ( 'CARLOS', 'JIMENEZ', 'UMAÑA' );
-INSERT INTO CAMARERO ( nombre, apellido1, apellido2 ) VALUES ( 'JUAN', 'PERITO', 'MENDOZA' );
-INSERT INTO CAMARERO ( nombre, apellido1, apellido2 ) VALUES ( 'ISRAEL', 'CARTES', 'CARDENAS' );
-INSERT INTO CAMARERO ( nombre, apellido1, apellido2 ) VALUES ( 'JAIME', 'CAMACHO', 'ROLDAN' );
+-- camareros
+insert into camarero ( nombre, apellido1, apellido2 ) values ( 'luis', 'altamar', 'sastoque' );
+insert into camarero ( nombre, apellido1, apellido2 ) values ( 'carlos', 'jimenez', 'umaña' );
+insert into camarero ( nombre, apellido1, apellido2 ) values ( 'juan', 'perito', 'mendoza' );
+insert into camarero ( nombre, apellido1, apellido2 ) values ( 'israel', 'cartes', 'cardenas' );
+insert into camarero ( nombre, apellido1, apellido2 ) values ( 'jaime', 'camacho', 'roldan' );
 
--- MESAS
-INSERT INTO MESA ( nummaxcomensales, ubicacion ) VALUES ( 2, 'ZONA A');
-INSERT INTO MESA ( nummaxcomensales, ubicacion ) VALUES ( 4, 'ZONA B');
-INSERT INTO MESA ( nummaxcomensales, ubicacion ) VALUES ( 4, 'ZONA B');
-INSERT INTO MESA ( nummaxcomensales, ubicacion ) VALUES ( 6, 'ZONA C');
-INSERT INTO MESA ( nummaxcomensales, ubicacion ) VALUES ( 6, 'ZONA C');
-INSERT INTO MESA ( nummaxcomensales, ubicacion ) VALUES ( 8, 'ZONA D');
-INSERT INTO MESA ( nummaxcomensales, ubicacion ) VALUES ( 8, 'ZONA D');
+-- mesas
+insert into mesa ( nummaxcomensales, ubicacion ) values ( 2, 'zona a');
+insert into mesa ( nummaxcomensales, ubicacion ) values ( 4, 'zona b');
+insert into mesa ( nummaxcomensales, ubicacion ) values ( 4, 'zona b');
+insert into mesa ( nummaxcomensales, ubicacion ) values ( 6, 'zona c');
+insert into mesa ( nummaxcomensales, ubicacion ) values ( 6, 'zona c');
+insert into mesa ( nummaxcomensales, ubicacion ) values ( 8, 'zona d');
+insert into mesa ( nummaxcomensales, ubicacion ) values ( 8, 'zona d');
 
--- CLIENTES
-INSERT INTO CLIENTE ( nombre, apellido1, apellido2, observaciones ) VALUES ( 'JAIRO', 'ALVAREZ', 'MONTANO', 'Le gusta el sancocho' );
-INSERT INTO CLIENTE ( nombre, apellido1, apellido2, observaciones ) VALUES ( 'PEDRO', 'SARMIENTO', 'TRUJILLO', 'Le gusta el sancocho' );
+-- clientes
+insert into cliente ( nombre, apellido1, apellido2, observaciones ) values ( 'jairo', 'alvarez', 'montano', 'le gusta el sancocho' );
+insert into cliente ( nombre, apellido1, apellido2, observaciones ) values ( 'pedro', 'sarmiento', 'trujillo', 'le gusta el sancocho' );
 
--- FACTURAS
-INSERT INTO FACTURA ( idcliente, idcamarero, idmesa, fechafactura ) VALUES ( 1, 1, 1, '2019-03-01 00:00:01');
-INSERT INTO FACTURA ( idcliente, idcamarero, idmesa, fechafactura ) VALUES ( 1, 2, 2, '2019-04-01 00:00:01');
-INSERT INTO FACTURA ( idcliente, idcamarero, idmesa, fechafactura ) VALUES ( 2, 3, 3, '2019-05-01 00:00:01');
-INSERT INTO FACTURA ( idcliente, idcamarero, idmesa, fechafactura ) VALUES ( 2, 4, 4, '2019-06-01 00:00:01');
+-- facturas
+insert into factura ( idcliente, idcamarero, idmesa, fechafactura ) values ( 1, 1, 1, '2019-03-01 00:00:01');
+insert into factura ( idcliente, idcamarero, idmesa, fechafactura ) values ( 1, 2, 2, '2019-04-01 00:00:01');
+insert into factura ( idcliente, idcamarero, idmesa, fechafactura ) values ( 2, 3, 3, '2019-05-01 00:00:01');
+insert into factura ( idcliente, idcamarero, idmesa, fechafactura ) values ( 2, 4, 4, '2019-06-01 00:00:01');
 
--- DETALLE FACTURA
--- FACTURA 1
-INSERT INTO DETALLEFACTURA ( idfactura, idcocinero, plato, importe ) VALUES ( 1, 1, 'SANCOCHO', 50000 );
-INSERT INTO DETALLEFACTURA ( idfactura, idcocinero, plato, importe ) VALUES ( 1, 2, 'BANDEJA PAISA', 50000 );
+-- detalle factura
+-- factura 1
+insert into detallefactura ( idfactura, idcocinero, plato, importe ) values ( 1, 1, 'sancocho', 50000 );
+insert into detallefactura ( idfactura, idcocinero, plato, importe ) values ( 1, 2, 'bandeja paisa', 50000 );
 
--- FACTURA 2
-INSERT INTO DETALLEFACTURA ( idfactura, idcocinero, plato, importe ) VALUES ( 2, 1, 'SANCOCHO', 50000 );
-INSERT INTO DETALLEFACTURA ( idfactura, idcocinero, plato, importe ) VALUES ( 2, 2, 'BANDEJA PAISA', 50000 );
-INSERT INTO DETALLEFACTURA ( idfactura, idcocinero, plato, importe ) VALUES ( 2, 2, 'HELADO', 50000 );
+-- factura 2
+insert into detallefactura ( idfactura, idcocinero, plato, importe ) values ( 2, 1, 'sancocho', 50000 );
+insert into detallefactura ( idfactura, idcocinero, plato, importe ) values ( 2, 2, 'bandeja paisa', 50000 );
+insert into detallefactura ( idfactura, idcocinero, plato, importe ) values ( 2, 2, 'helado', 50000 );
 
--- FACTURA 3
-INSERT INTO DETALLEFACTURA ( idfactura, idcocinero, plato, importe ) VALUES ( 3, 1, 'SOPA', 20000 );
-INSERT INTO DETALLEFACTURA ( idfactura, idcocinero, plato, importe ) VALUES ( 3, 2, 'ARROZ', 20000 );
+-- factura 3
+insert into detallefactura ( idfactura, idcocinero, plato, importe ) values ( 3, 1, 'sopa', 20000 );
+insert into detallefactura ( idfactura, idcocinero, plato, importe ) values ( 3, 2, 'arroz', 20000 );
 
--- FACTURA 4
-INSERT INTO DETALLEFACTURA ( idfactura, idcocinero, plato, importe ) VALUES ( 4, 1, 'SANCOCHO', 50000 );
-INSERT INTO DETALLEFACTURA ( idfactura, idcocinero, plato, importe ) VALUES ( 4, 2, 'ARROZ', 20000 );
+-- factura 4
+insert into detallefactura ( idfactura, idcocinero, plato, importe ) values ( 4, 1, 'sancocho', 50000 );
+insert into detallefactura ( idfactura, idcocinero, plato, importe ) values ( 4, 2, 'arroz', 20000 );
