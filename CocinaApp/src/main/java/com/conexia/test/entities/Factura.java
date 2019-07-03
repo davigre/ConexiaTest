@@ -30,7 +30,7 @@ public class Factura {
     @JoinColumn(name = "idmesa")
 	private Mesa mesa;
 
-	@OneToMany(mappedBy = "factura", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "factura", cascade = CascadeType.PERSIST)
     private List<Detallefactura> facturaDetails;
 	
 	public Long getId() {
@@ -81,6 +81,15 @@ public class Factura {
 		this.facturaDetails = facturaDetails;
 	}
 
+	public Detallefactura addDetalleFactura(Detallefactura detallefactura) {
+		
+		detallefactura.setFactura(this);
+		this.facturaDetails.add(detallefactura);
+		
+		return detallefactura;
+		
+	}
+	
 	@Override
 	public String toString() {
 		return "Factura [id=" + id + ", fechaFactura=" + fechaFactura + ", cliente=" + cliente + ", camarero="

@@ -72,8 +72,7 @@ public class FacturaServiceImpl implements FacturaServiceI {
 		factura.setCliente(cliente);
 		factura.setCamarero(camarero);
 		factura.setMesa(mesa);
-		factura.setFechaFactura(new Date());  
-		factura = facturaRepository.save(factura);
+		factura.setFechaFactura(new Date());
 		
 		ObjectMapper mapper = new ObjectMapper();
 		
@@ -89,16 +88,15 @@ public class FacturaServiceImpl implements FacturaServiceI {
 				
 				Detallefactura detallefactura = new Detallefactura();
 				detallefactura.setCocinero(cocinero);
-				detallefactura.setFactura(factura);
 				detallefactura.setPlato(detail.getPlato());
-				detallefactura.setImporte(Integer.parseInt(detail.getImporte()));
+				detallefactura.setImporte(Integer.parseInt(detail.getImporte()));			
 				
-				detallefactura = detallefacturaRepository.save(detallefactura);
-				
-				factura.getFacturaDetails().add(detallefactura);
+				factura.addDetalleFactura(detallefactura);
 				
 			}			
-				
+			
+			factura = facturaRepository.save(factura);
+			
 		} catch (JsonParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
