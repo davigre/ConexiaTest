@@ -12,15 +12,16 @@
 <script src="jqueryui/jquery-ui.min.js"></script>
 </head>
 <body>
-<h3>Edicion de Cliente</h3>
+<h3>Edit Cliente</h3>
 <form action="updateClienteRequest" method="post">
 <pre>
-Id: <input type="text" name="id" value="${cliente.id}" readonly />
+Id: ${cliente.id}
 Nombre: <input type="text" name="nombre" value="${cliente.nombre}"/>
 Apellido1: <input type="text" name="apellido1" value="${cliente.apellido1}"/>
 Apellido2: <input type="text" name="apellido2" value="${cliente.apellido2}"/>
 Observaciones: <input type="text" name="observaciones" value="${cliente.observaciones}"/>
 <input type="submit" value="Guardar"/>
+<input type="hidden" value="${cliente.id}" name="id" />
 </pre>
 </form>
 ${msg}

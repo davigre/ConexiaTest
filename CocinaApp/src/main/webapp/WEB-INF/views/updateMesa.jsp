@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Update Mesa</title>
+<title>Edit Mesa</title>
 <link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
 <link rel="stylesheet" href="cocina.css">
 <script src="jqueryui/jquery.js"></script>
@@ -15,10 +15,11 @@
 <h3>Edicion Mesa</h3>
 <form action="updateMesaRequest" method="post">
 <pre>
-Id: <input type="text" name="id" value="${mesa.id}" readonly />
+Id: ${mesa.id}
 Numero Maximo Comensales: <input type="text" name="numMaxComensales" value="${mesa.numMaxComensales}"/>
 Ubicación: <input type="text" name="ubicacion" value="${mesa.ubicacion}"/>
 <input type="submit" value="Guardar"/>
+<input type="hidden" value="${mesa.id}" name="id" />
 </pre>
 </form>
 ${msg}

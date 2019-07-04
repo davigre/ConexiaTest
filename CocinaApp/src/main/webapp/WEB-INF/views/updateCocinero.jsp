@@ -12,14 +12,15 @@
 <script src="jqueryui/jquery-ui.min.js"></script>
 </head>
 <body>
-<h3>Update Cocinero</h3>
+<h3>Edit Cocinero</h3>
 <form action="updateCocineroRequest" method="post">
 <pre>
-Id: <input type="text" name="id" value="${cocinero.id}" readonly />
+Id: ${cocinero.id}
 Nombre: <input type="text" name="nombre" value="${cocinero.nombre}"/>
 Apellido1: <input type="text" name="apellido1" value="${cocinero.apellido1}"/>
 Apellido2: <input type="text" name="apellido2" value="${cocinero.apellido2}"/>
 <input type="submit" value="Guardar"/>
+<input type="hidden" value="${cocinero.id}" name="id" />
 </pre>
 </form>
 ${msg}

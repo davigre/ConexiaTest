@@ -67,7 +67,7 @@ public class CamareroController {
 		for (Object[] registro : data) {
 
 			CamareroSalesReportDto camareroSalesReportDto = new CamareroSalesReportDto(registro[0].toString(),
-					registro[1].toString(), registro[2] == null ? "" : registro[2].toString(), registro[3].toString());
+					registro[1].toString(), registro[2].toString(), registro[3].toString());
 
 			camareroSalesReportsDto.add(camareroSalesReportDto);
 
