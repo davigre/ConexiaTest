@@ -9,7 +9,7 @@ import com.conexia.test.entities.Camarero;
 
 public interface CamareroRepository extends JpaRepository<Camarero, Long> {
 
-	@Query(value = "SELECT ca.idcamarero, CONCAT(ca.nombre, ' ', ca.apellido1, ' ', ca.apellido2) nombre, re.periodo, IFNULL(re.importe, 0) importe\r\n"
+	@Query(value = "SELECT ca.idcamarero, CONCAT(ca.nombre, ' ', ca.apellido1, ' ', IFNULL(ca.apellido2, '')) nombre, re.periodo, IFNULL(re.importe, 0) importe\r\n"
 			+ "FROM camarero ca\r\n" + "LEFT JOIN (\r\n"
 			+ "	SELECT fa.idcamarero, CONCAT(YEAR(fa.FechaFactura), '-', MONTH(fa.FechaFactura)) periodo, sum(df.importe) importe\r\n"
 			+ "	FROM factura fa\r\n" + "	JOIN detallefactura df on df.idfactura=fa.idfactura\r\n"
